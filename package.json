@@ -1,0 +1,25 @@
+{
+  "name": "apollo-federation-test1",
+  "version": "1.0.0",
+  "description": "Playing around with apollo federation graphql",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -k npm:dev:*",
+    "dev:people": "nodemon -r esm ./people/index.js",
+    "dev:films": "nodemon -r esm ./films/index.js",
+    "dev:gateway": "wait-on tcp:4001 tcp:4002 && nodemon -r esm ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "^0.13.2",
+    "@apollo/gateway": "^0.13.2",
+    "apollo-server": "^2.14.2",
+    "concurrently": "^5.1.0",
+    "esm": "^3.2.25",
+    "graphql": "^15.0.0",
+    "nodemon": "^2.0.2",
+    "wait-on": "^4.0.1"
+  }
+}
